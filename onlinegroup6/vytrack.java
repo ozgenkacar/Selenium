@@ -13,15 +13,15 @@ public class vytrack {
             driver.get("https://qa2.vytrack.com/user/login ");
 
             WebElement input= driver.findElement(By.name("_username"));
-            input.sendKeys("user151", Keys.ENTER);
+            input.sendKeys("user151",Keys.ENTER);
 
             WebElement password  = driver.findElement(By.name("_password"));
             password.sendKeys("UserUser123");
-
+           // password.submit();
             WebElement button = driver.findElement(By.id("_submit"));
             button.click();
 
-            String expectedUrl ="https://qa2.vytrack.com/";
+            String expectedUrl ="https://qa2.vytrack.com";
             String actualUrl = driver.getCurrentUrl();
             BrowserUtils.wait(5);
             if (expectedUrl.equals(actualUrl)) {
